@@ -272,7 +272,7 @@
       current context to be used rather than a helper of the same name.
 
 %h2#Comments
-  Template comments with <code>{{! }}</code> or <code>{{!-- --}}</code>.
+  Template comments with <code>{{!-- --}}</code>.
 
 .content
   .bullet
@@ -282,7 +282,7 @@
       practice.
     :html
       <div class="entry">
-        {{! only output this author names if an author exists }}
+        {{!-- only output this author names if an author exists --}}
         {{#if author}}
           <h1>{{firstName}} {{lastName}}</h1>
         {{/if}}
@@ -292,13 +292,12 @@
       comments to show up. Just use html comments, and they will be output.
     :html
       <div class="entry">
-        {{! This comment will not be in the output }}
+        {{!-- This comment will not be in the output --}}
         <!-- This comment will be in the output -->
       </div>
 
     .notes
-      Any comments that must contain <code>}}</code> or other handlebars
-      tokens should use the <code>{{!-- --}}</code> syntax.
+      Note, there is another comment syntax (<code>{{! }}</code>), but that syntax can not comment out code.
 
 %h2#helpers
   Helpers
